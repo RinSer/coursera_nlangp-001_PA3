@@ -1,0 +1,316 @@
+I've managed to get the goal scores on all parts, so here's some debug output for small training sentences on both ibm model 1 and model 2 for two iterations each:
+
+Update (23/04/2013):
+Added the delta values to the log and removed one sentence from the training set.
+
+Sentence pair 1:  en: ('the', 'car')    es: ('la', 'coche')
+Sentence pair 2:  en: ('the', 'house')  es: ('el', 'casa')
+Sentence pair 3:  en: ('the', 'woman')  es: ('el', 'mujer')
+
+Estimating t parameters (IBM model 1)...
+
+n(car) = 2
+n(the) = 5
+n(woman) = 2
+n(NULL) = 5
+n(house) = 2
+
+Initial t parameters:
+t(el | house) = 0.500000
+t(el | the) = 0.200000
+t(el | NULL) = 0.200000
+t(el | woman) = 0.500000
+t(coche | car) = 0.500000
+t(coche | the) = 0.200000
+t(coche | NULL) = 0.200000
+t(casa | house) = 0.500000
+t(casa | the) = 0.200000
+t(casa | NULL) = 0.200000
+t(mujer | the) = 0.200000
+t(mujer | woman) = 0.500000
+t(mujer | NULL) = 0.200000
+t(la | car) = 0.500000
+t(la | the) = 0.200000
+t(la | NULL) = 0.200000
+
+Iteration 1:
+delta[1][1][0] = 0.222222
+delta[1][1][1] = 0.222222
+delta[1][1][2] = 0.555556
+delta[1][2][0] = 0.222222
+delta[1][2][1] = 0.222222
+delta[1][2][2] = 0.555556
+delta[2][1][0] = 0.222222
+delta[2][1][1] = 0.222222
+delta[2][1][2] = 0.555556
+delta[2][2][0] = 0.222222
+delta[2][2][1] = 0.222222
+delta[2][2][2] = 0.555556
+delta[3][1][0] = 0.222222
+delta[3][1][1] = 0.222222
+delta[3][1][2] = 0.555556
+delta[3][2][0] = 0.222222
+delta[3][2][1] = 0.222222
+delta[3][2][2] = 0.555556
+c(car, coche) = 0.555556
+c(car, la) = 0.555556
+c(the, el) = 0.444444
+c(the, coche) = 0.222222
+c(the, casa) = 0.222222
+c(the, mujer) = 0.222222
+c(the, la) = 0.222222
+c(NULL, el) = 0.444444
+c(NULL, coche) = 0.222222
+c(NULL, casa) = 0.222222
+c(NULL, mujer) = 0.222222
+c(NULL, la) = 0.222222
+c(woman, el) = 0.555556
+c(woman, mujer) = 0.555556
+c(house, el) = 0.555556
+c(house, casa) = 0.555556
+c(car) = 1.111111
+c(the) = 1.333333
+c(NULL) = 1.333333
+c(woman) = 1.111111
+c(house) = 1.111111
+t(el | house) = 0.500000
+t(el | the) = 0.333333
+t(el | NULL) = 0.333333
+t(el | woman) = 0.500000
+t(coche | car) = 0.500000
+t(coche | the) = 0.166667
+t(coche | NULL) = 0.166667
+t(casa | house) = 0.500000
+t(casa | the) = 0.166667
+t(casa | NULL) = 0.166667
+t(mujer | the) = 0.166667
+t(mujer | woman) = 0.500000
+t(mujer | NULL) = 0.166667
+t(la | car) = 0.500000
+t(la | the) = 0.166667
+t(la | NULL) = 0.166667
+
+Iteration 2:
+delta[1][1][0] = 0.200000
+delta[1][1][1] = 0.200000
+delta[1][1][2] = 0.600000
+delta[1][2][0] = 0.200000
+delta[1][2][1] = 0.200000
+delta[1][2][2] = 0.600000
+delta[2][1][0] = 0.285714
+delta[2][1][1] = 0.285714
+delta[2][1][2] = 0.428571
+delta[2][2][0] = 0.200000
+delta[2][2][1] = 0.200000
+delta[2][2][2] = 0.600000
+delta[3][1][0] = 0.285714
+delta[3][1][1] = 0.285714
+delta[3][1][2] = 0.428571
+delta[3][2][0] = 0.200000
+delta[3][2][1] = 0.200000
+delta[3][2][2] = 0.600000
+c(car, coche) = 0.600000
+c(car, la) = 0.600000
+c(the, el) = 0.571429
+c(the, coche) = 0.200000
+c(the, casa) = 0.200000
+c(the, mujer) = 0.200000
+c(the, la) = 0.200000
+c(NULL, el) = 0.571429
+c(NULL, coche) = 0.200000
+c(NULL, casa) = 0.200000
+c(NULL, mujer) = 0.200000
+c(NULL, la) = 0.200000
+c(woman, el) = 0.428571
+c(woman, mujer) = 0.600000
+c(house, el) = 0.428571
+c(house, casa) = 0.600000
+c(car) = 1.200000
+c(the) = 1.371429
+c(NULL) = 1.371429
+c(woman) = 1.028571
+c(house) = 1.028571
+t(el | house) = 0.416667
+t(el | the) = 0.416667
+t(el | NULL) = 0.416667
+t(el | woman) = 0.416667
+t(coche | car) = 0.500000
+t(coche | the) = 0.145833
+t(coche | NULL) = 0.145833
+t(casa | house) = 0.583333
+t(casa | the) = 0.145833
+t(casa | NULL) = 0.145833
+t(mujer | the) = 0.145833
+t(mujer | woman) = 0.583333
+t(mujer | NULL) = 0.145833
+t(la | car) = 0.500000
+t(la | the) = 0.145833
+t(la | NULL) = 0.145833
+
+Estimating t & q parameters (IBM model 2)...
+
+Initial q parameters:
+q(0 | 1, 2, 2) = 0.333333
+q(0 | 2, 2, 2) = 0.333333
+q(1 | 1, 2, 2) = 0.333333
+q(1 | 2, 2, 2) = 0.333333
+q(2 | 1, 2, 2) = 0.333333
+q(2 | 2, 2, 2) = 0.333333
+
+iteration 1:
+delta[1][1][0] = 0.184211
+delta[1][1][1] = 0.184211
+delta[1][1][2] = 0.631579
+delta[1][2][0] = 0.184211
+delta[1][2][1] = 0.184211
+delta[1][2][2] = 0.631579
+delta[2][1][0] = 0.333333
+delta[2][1][1] = 0.333333
+delta[2][1][2] = 0.333333
+delta[2][2][0] = 0.166667
+delta[2][2][1] = 0.166667
+delta[2][2][2] = 0.666667
+delta[3][1][0] = 0.333333
+delta[3][1][1] = 0.333333
+delta[3][1][2] = 0.333333
+delta[3][2][0] = 0.166667
+delta[3][2][1] = 0.166667
+delta[3][2][2] = 0.666667
+c(0 | 1, 2, 2) = 0.850877
+c(0 | 2, 2, 2) = 0.517544
+c(1 | 1, 2, 2) = 0.850877
+c(1 | 2, 2, 2) = 0.517544
+c(2 | 1, 2, 2) = 1.298246
+c(2 | 2, 2, 2) = 1.964912
+c(1, 2, 2) = 3.000000
+c(2, 2, 2) = 3.000000
+c(car, coche) = 0.631579
+c(car, la) = 0.631579
+c(the, el) = 0.666667
+c(the, coche) = 0.184211
+c(the, casa) = 0.166667
+c(the, mujer) = 0.166667
+c(the, la) = 0.184211
+c(NULL, el) = 0.666667
+c(NULL, coche) = 0.184211
+c(NULL, casa) = 0.166667
+c(NULL, mujer) = 0.166667
+c(NULL, la) = 0.184211
+c(woman, el) = 0.333333
+c(woman, mujer) = 0.666667
+c(house, el) = 0.333333
+c(house, casa) = 0.666667
+c(car) = 1.263158
+c(the) = 1.368421
+c(NULL) = 1.368421
+c(woman) = 1.000000
+c(house) = 1.000000
+t(el | house) = 0.333333
+t(el | the) = 0.487179
+t(el | NULL) = 0.487179
+t(el | woman) = 0.333333
+t(coche | car) = 0.500000
+t(coche | the) = 0.134615
+t(coche | NULL) = 0.134615
+t(casa | house) = 0.666667
+t(casa | the) = 0.121795
+t(casa | NULL) = 0.121795
+t(mujer | the) = 0.121795
+t(mujer | woman) = 0.666667
+t(mujer | NULL) = 0.121795
+t(la | car) = 0.500000
+t(la | the) = 0.134615
+t(la | NULL) = 0.134615
+q(0 | 1, 2, 2) = 0.283626
+q(0 | 2, 2, 2) = 0.172515
+q(1 | 1, 2, 2) = 0.283626
+q(1 | 2, 2, 2) = 0.172515
+q(2 | 1, 2, 2) = 0.432749
+q(2 | 2, 2, 2) = 0.654971
+
+iteration 2:
+delta[1][1][0] = 0.130426
+delta[1][1][1] = 0.130426
+delta[1][1][2] = 0.739147
+delta[1][2][0] = 0.062105
+delta[1][2][1] = 0.062105
+delta[1][2][2] = 0.875789
+delta[2][1][0] = 0.328520
+delta[2][1][1] = 0.328520
+delta[2][1][2] = 0.342959
+delta[2][2][0] = 0.043895
+delta[2][2][1] = 0.043895
+delta[2][2][2] = 0.912209
+delta[3][1][0] = 0.328520
+delta[3][1][1] = 0.328520
+delta[3][1][2] = 0.342959
+delta[3][2][0] = 0.043895
+delta[3][2][1] = 0.043895
+delta[3][2][2] = 0.912209
+c(0 | 1, 2, 2) = 0.787467
+c(0 | 2, 2, 2) = 0.149896
+c(1 | 1, 2, 2) = 0.787467
+c(1 | 2, 2, 2) = 0.149896
+c(2 | 1, 2, 2) = 1.425065
+c(2 | 2, 2, 2) = 2.700208
+c(1, 2, 2) = 3.000000
+c(2, 2, 2) = 3.000000
+c(car, coche) = 0.875789
+c(car, la) = 0.739147
+c(the, el) = 0.657041
+c(the, coche) = 0.062105
+c(the, casa) = 0.043895
+c(the, mujer) = 0.043895
+c(the, la) = 0.130426
+c(NULL, el) = 0.657041
+c(NULL, coche) = 0.062105
+c(NULL, casa) = 0.043895
+c(NULL, mujer) = 0.043895
+c(NULL, la) = 0.130426
+c(woman, el) = 0.342959
+c(woman, mujer) = 0.912209
+c(house, el) = 0.342959
+c(house, casa) = 0.912209
+c(car) = 1.614937
+c(the) = 0.937363
+c(NULL) = 0.937363
+c(woman) = 1.255168
+c(house) = 1.255168
+t(el | house) = 0.273237
+t(el | the) = 0.700946
+t(el | NULL) = 0.700946
+t(el | woman) = 0.273237
+t(coche | car) = 0.542306
+t(coche | the) = 0.066255
+t(coche | NULL) = 0.066255
+t(casa | house) = 0.726763
+t(casa | the) = 0.046829
+t(casa | NULL) = 0.046829
+t(mujer | the) = 0.046829
+t(mujer | woman) = 0.726763
+t(mujer | NULL) = 0.046829
+t(la | car) = 0.457694
+t(la | the) = 0.139142
+t(la | NULL) = 0.139142
+q(0 | 1, 2, 2) = 0.262489
+q(0 | 2, 2, 2) = 0.049965
+q(1 | 1, 2, 2) = 0.262489
+q(1 | 2, 2, 2) = 0.049965
+q(2 | 1, 2, 2) = 0.475022
+q(2 | 2, 2, 2) = 0.900069
+
+Part 1 alignments:
+Sentence pair 1:  en: ('the', 'car')    es: ('la', 'coche')
+      alignment: [2, 2]
+Sentence pair 2:  en: ('the', 'house')  es: ('el', 'casa')
+      alignment: [0, 2]
+Sentence pair 3:  en: ('the', 'woman')  es: ('el', 'mujer')
+      alignment: [0, 2]
+
+Part 2 alignments:
+Sentence pair 1:  en: ('the', 'car')    es: ('la', 'coche')
+      alignment: [2, 2]
+Sentence pair 2:  en: ('the', 'house')  es: ('el', 'casa')
+      alignment: [0, 2]
+Sentence pair 3:  en: ('the', 'woman')  es: ('el', 'mujer')
+      alignment: [0, 2]
