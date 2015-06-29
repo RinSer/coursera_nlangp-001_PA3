@@ -1,2 +1,3 @@
-# coursera_nlangp-001_PA3
-Natural language processing course from Columbia University. Programming Assignment 3 codes.
+# Natural Language Processing, Problem Set 3
+
+Link to the assignment description: https://spark-public.s3.amazonaws.com/nlangp/assignments/h3-p.pdf
